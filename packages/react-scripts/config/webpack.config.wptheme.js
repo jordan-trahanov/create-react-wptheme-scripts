@@ -629,7 +629,7 @@ module.exports = function (webpackEnv) {
       // See https://github.com/facebook/create-react-app/issues/240
       isEnvDevelopment && new CaseSensitivePathsPlugin(),
       // wptheme added FileWatcherPlugin
-      // For create-react-wptheme: watch addition files in the public folder for changes
+      // For create-react-wptheme5: watch addition files in the public folder for changes
       // touchFile is used to force WebPack to do a rebuild. It must be a file that WebPack is watching.
       isEnvDevelopment && new FileWatcherPlugin(fileWatcherPluginConfig),
       // If you require a missing module and then `npm install` it, you still have
