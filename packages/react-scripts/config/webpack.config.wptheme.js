@@ -1,6 +1,6 @@
 // @remove-on-eject-begin
 /**
- * Copyright (c) 2019-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/jordan-trahanov
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -39,12 +39,13 @@ const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
 
-const FileWatcherPlugin = require('@devloco/create-react-wptheme-utils/fileWatcherPlugin');
+const FileWatcherPlugin = require('@canufeelit/create-react-wptheme-utils/fileWatcherPlugin');
 
-const wpThemeUserConfig = require('@devloco/create-react-wptheme-utils/getUserConfig')(
-  paths,
-  process.env.NODE_ENV
-);
+const wpThemeUserConfig =
+  require('@canufeelit/create-react-wptheme-utils/getUserConfig')(
+    paths,
+    process.env.NODE_ENV
+  );
 
 const fileWatcherPluginConfig =
   wpThemeUserConfig && wpThemeUserConfig.fileWatcherPlugin

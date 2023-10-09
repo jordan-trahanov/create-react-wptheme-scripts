@@ -1,13 +1,13 @@
 {
-  "name": "@devloco/react-scripts-wptheme",
+  "name": "@canufeelit/react-scripts-wptheme",
   "version": "3.4.1-wp.1",
   "description": "Configuration and scripts for Create React WP Theme.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devloco/create-react-wptheme-scripts.git",
+    "url": "https://github.com/jordan-trahanov/create-react-wptheme-scripts.git",
     "directory": "packages/react-scripts"
   },
-  "author": "devloco",
+  "author": "canufeelit",
   "license": "MIT",
   "keywords": [
     "wordpress",
@@ -28,7 +28,7 @@
     "node": ">=8.10"
   },
   "bugs": {
-    "url": "https://github.com/devloco/create-react-wptheme/issues"
+    "url": "https://github.com/jordan-trahanov/create-react-wptheme/issues"
   },
   "files": [
     "bin",
@@ -94,7 +94,7 @@
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1",
-    "@devloco/create-react-wptheme-utils": "^3.4.1-wp.1"
+    "@canufeelit/create-react-wptheme-utils": "^3.4.1-wp.1"
   },
   "devDependencies": {
     "react": "^16.12.0",

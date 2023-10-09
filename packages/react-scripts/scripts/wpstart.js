@@ -1,6 +1,6 @@
 // @remove-on-eject-begin
 /**
- * Copyright (c) 2019-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/jordan-trahanov
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -80,12 +80,13 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 // wptheme - added section - start
 const config = configFactory('development');
 const appPackage = require(paths.appPackageJson);
-const wpThemeUserConfig = require('@devloco/create-react-wptheme-utils/getUserConfig')(
-  paths,
-  process.env.NODE_ENV
-);
-const wpThemePostInstallerInfo = require('@devloco/create-react-wptheme-utils/postInstallerInfo');
-const wpThemeFileFunctions = require('@devloco/create-react-wptheme-utils/fileFunctions');
+const wpThemeUserConfig =
+  require('@canufeelit/create-react-wptheme-utils/getUserConfig')(
+    paths,
+    process.env.NODE_ENV
+  );
+const wpThemePostInstallerInfo = require('@canufeelit/create-react-wptheme-utils/postInstallerInfo');
+const wpThemeFileFunctions = require('@canufeelit/create-react-wptheme-utils/fileFunctions');
 
 const copyPublicFolder = wpThemeFileFunctions.copyPublicFolder;
 const copyToThemeFolder = wpThemeFileFunctions.copyToThemeFolder;
@@ -97,7 +98,7 @@ const _wpThemeServer =
   wpThemeUserConfig &&
   wpThemeUserConfig.wpThemeServer &&
   wpThemeUserConfig.wpThemeServer.enable === true
-    ? require('@devloco/create-react-wptheme-utils/wpThemeServer')
+    ? require('@canufeelit/create-react-wptheme-utils/wpThemeServer')
     : null;
 // wptheme - added section - end
 

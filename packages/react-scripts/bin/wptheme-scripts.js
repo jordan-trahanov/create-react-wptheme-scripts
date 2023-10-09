@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Copyright (c) 2019-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/jordan-trahanov
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -11,7 +11,7 @@
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
@@ -19,7 +19,7 @@ const spawn = require('react-dev-utils/crossSpawn');
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(
-  x => x === 'build' || x === 'start' || x === 'wpbuild' || x === 'wpstart'
+  (x) => x === 'build' || x === 'start' || x === 'wpbuild' || x === 'wpstart'
 );
 let script = scriptIndex === -1 ? args[0] : args[scriptIndex]; // wptheme -- change to "let" to allow modification...
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];

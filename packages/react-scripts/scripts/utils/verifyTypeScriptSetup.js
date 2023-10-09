@@ -132,7 +132,7 @@ function verifyTypeScriptSetup() {
   };
 
   const formatDiagnosticHost = {
-    getCanonicalFileName: fileName => fileName,
+    getCanonicalFileName: (fileName) => fileName,
     getCurrentDirectory: ts.sys.getCurrentDirectory,
     getNewLine: () => os.EOL,
   };
@@ -157,7 +157,7 @@ function verifyTypeScriptSetup() {
     // Calling this function also mutates the tsconfig above,
     // adding in "include" and "exclude", but the compilerOptions remain untouched
     let result;
-    parsedTsConfig = immer(readTsConfig, config => {
+    parsedTsConfig = immer(readTsConfig, (config) => {
       result = ts.parseJsonConfigFileContent(
         config,
         ts.sys,
@@ -244,7 +244,7 @@ function verifyTypeScriptSetup() {
           'file:'
         )
       );
-      messages.forEach(message => {
+      messages.forEach((message) => {
         console.warn('  - ' + message);
       });
       console.warn();
@@ -252,11 +252,11 @@ function verifyTypeScriptSetup() {
     writeJson(paths.appTsConfig, appTsConfig);
   }
 
-  // Reference `@devloco/react-scripts-wptheme` types
+  // Reference `@canufeelit/react-scripts-wptheme` types
   if (!fs.existsSync(paths.appTypeDeclarations)) {
     fs.writeFileSync(
       paths.appTypeDeclarations,
-      `/// <reference types="@devloco/react-scripts-wptheme" />${os.EOL}`
+      `/// <reference types="@canufeelit/react-scripts-wptheme" />${os.EOL}`
     );
   }
 }

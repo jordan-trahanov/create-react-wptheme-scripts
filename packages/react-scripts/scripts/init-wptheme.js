@@ -1,6 +1,6 @@
 // @remove-file-on-eject
 /**
- * Copyright (c) 2019-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/jordan-trahanov
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -10,16 +10,16 @@
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
-const shelljs = require('@devloco/create-react-wptheme-utils/shell-js');
+const shelljs = require('@canufeelit/create-react-wptheme-utils/shell-js');
 
-const fnUpdateAppPackage = function(
+const fnUpdateAppPackage = function (
   appPackage,
   appPath,
   appName,
@@ -35,7 +35,7 @@ const fnUpdateAppPackage = function(
   // Prefix the original create-react-app script rules with "cra"
   // so that wptheme can take over the start and build commands.
   const craCommandNames = ['build', 'eject', 'start', 'test'];
-  craCommandNames.forEach(commandName => {
+  craCommandNames.forEach((commandName) => {
     let scriptRule = appPackage.scripts[commandName];
     appPackage.scripts['cra' + commandName] = scriptRule;
     delete appPackage.scripts[commandName];
@@ -50,7 +50,7 @@ const fnUpdateAppPackage = function(
     'wpbuild',
     'wpstart',
   ];
-  commandNames.forEach(commandName => {
+  commandNames.forEach((commandName) => {
     appPackage.scripts[`${commandName}`] = `wptheme-scripts ${commandName}`;
   });
 
@@ -60,7 +60,7 @@ const fnUpdateAppPackage = function(
   return appPackage;
 };
 
-const fnFinish = function(
+const fnFinish = function (
   appPackage,
   appPath,
   appName,
@@ -110,7 +110,7 @@ const fnFinish = function(
     }
 
     let files = [path.resolve(originalDirectory, reactSrcName)];
-    files.forEach(file => {
+    files.forEach((file) => {
       setReadWrite(file);
     });
   }

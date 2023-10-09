@@ -1,6 +1,6 @@
 // @remove-on-eject-begin
 /**
- * Copyright (c) 2019-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/jordan-trahanov
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -15,7 +15,7 @@ process.env.NODE_ENV = 'production';
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
@@ -49,8 +49,8 @@ const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
 const useYarn = fs.existsSync(paths.yarnLockFile);
 
 const clearConsole = require('react-dev-utils/clearConsole');
-const wpThemePostInstallerInfo = require('@devloco/create-react-wptheme-utils/postInstallerInfo');
-const wpThemeFileFunctions = require('@devloco/create-react-wptheme-utils/fileFunctions');
+const wpThemePostInstallerInfo = require('@canufeelit/create-react-wptheme-utils/postInstallerInfo');
+const wpThemeFileFunctions = require('@canufeelit/create-react-wptheme-utils/fileFunctions');
 const copyPublicFolder = wpThemeFileFunctions.copyPublicFolder;
 const copyToThemeFolder = wpThemeFileFunctions.copyToThemeFolder;
 const cleanThemeFolder = wpThemeFileFunctions.cleanThemeFolder;
@@ -101,7 +101,7 @@ checkBrowsers(paths.appPath, isInteractive)
     // This lets us display how much they changed later.
     return measureFileSizesBeforeBuild(paths.appBuild);
   })
-  .then(previousFileSizes => {
+  .then((previousFileSizes) => {
     // Remove all content but keep the directory so that
     // if you're in it, you don't end up in Trash
     fs.emptyDirSync(paths.appBuild);
@@ -153,7 +153,7 @@ checkBrowsers(paths.appPath, isInteractive)
         useYarn
       );
     },
-    err => {
+    (err) => {
       const tscCompileOnError = process.env.TSC_COMPILE_ON_ERROR === 'true';
       if (tscCompileOnError) {
         console.log(
@@ -169,7 +169,7 @@ checkBrowsers(paths.appPath, isInteractive)
       }
     }
   )
-  .catch(err => {
+  .catch((err) => {
     if (err && err.message) {
       console.log(err.message);
     }

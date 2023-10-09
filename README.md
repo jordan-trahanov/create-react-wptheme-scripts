@@ -1,1 +1,1 @@
-This is the `react-scripts` fork used by @devloco/create-react-wptheme.
+This is the `react-scripts` fork used by @canufeelit/create-react-wptheme.

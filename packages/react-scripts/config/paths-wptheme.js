@@ -1,6 +1,6 @@
 // @remove-on-eject-begin
 /**
- * Copyright (c) 2019-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/jordan-trahanov
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -143,7 +143,7 @@ if (
 module.exports.moduleFileExtensions = moduleFileExtensions;
 
 // wptheme Issue 45
-const getUserConfig = require('@devloco/create-react-wptheme-utils/getUserConfig');
+const getUserConfig = require('@canufeelit/create-react-wptheme-utils/getUserConfig');
 const wpThemeUserConfig = getUserConfig(module.exports, process.env.NODE_ENV);
 
 // wptheme Issue 45; only the PROD wpThemeUserConfig object has a "homepage" member, so this works...
